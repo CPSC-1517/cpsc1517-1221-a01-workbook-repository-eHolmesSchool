@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\eholmes9\\source\\repos\\Copied the teacher\\NhlSolution\\NhlConsoleApp\\NhlConsoleApp.csproj": {}
+    "C:\\Users\\eholmes9\\Documents\\GitHub\\cpsc1517-1221-a01-workbook-repository-eHolmesSchool\\Copied the teacher\\NhlSolution\\NhlConsoleApp\\NhlConsoleApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\eholmes9\\source\\repos\\Copied the teacher\\NhlSolution\\NhlConsoleApp\\NhlConsoleApp.csproj": {
+    "C:\\Users\\eholmes9\\Documents\\GitHub\\cpsc1517-1221-a01-workbook-repository-eHolmesSchool\\Copied the teacher\\NhlSolution\\NhlConsoleApp\\NhlConsoleApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\eholmes9\\source\\repos\\Copied the teacher\\NhlSolution\\NhlConsoleApp\\NhlConsoleApp.csproj",
+        "projectUniqueName": "C:\\Users\\eholmes9\\Documents\\GitHub\\cpsc1517-1221-a01-workbook-repository-eHolmesSchool\\Copied the teacher\\NhlSolution\\NhlConsoleApp\\NhlConsoleApp.csproj",
         "projectName": "NhlConsoleApp",
-        "projectPath": "C:\\Users\\eholmes9\\source\\repos\\Copied the teacher\\NhlSolution\\NhlConsoleApp\\NhlConsoleApp.csproj",
+        "projectPath": "C:\\Users\\eholmes9\\Documents\\GitHub\\cpsc1517-1221-a01-workbook-repository-eHolmesSchool\\Copied the teacher\\NhlSolution\\NhlConsoleApp\\NhlConsoleApp.csproj",
         "packagesPath": "C:\\Users\\eholmes9\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\eholmes9\\source\\repos\\Copied the teacher\\NhlSolution\\NhlConsoleApp\\obj\\",
+        "outputPath": "C:\\Users\\eholmes9\\Documents\\GitHub\\cpsc1517-1221-a01-workbook-repository-eHolmesSchool\\Copied the teacher\\NhlSolution\\NhlConsoleApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,8 +32,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\eholmes9\\source\\repos\\Copied the teacher\\NhlSolution\\NhlSystemClassLibrary\\NhlSystemClassLibrary.csproj": {
-                "projectPath": "C:\\Users\\eholmes9\\source\\repos\\Copied the teacher\\NhlSolution\\NhlSystemClassLibrary\\NhlSystemClassLibrary.csproj"
+              "C:\\Users\\eholmes9\\Documents\\GitHub\\cpsc1517-1221-a01-workbook-repository-eHolmesSchool\\Copied the teacher\\NhlSolution\\NhlSystemClassLibrary\\NhlSystemClassLibrary.csproj": {
+                "projectPath": "C:\\Users\\eholmes9\\Documents\\GitHub\\cpsc1517-1221-a01-workbook-repository-eHolmesSchool\\Copied the teacher\\NhlSolution\\NhlSystemClassLibrary\\NhlSystemClassLibrary.csproj"
               }
             }
           }
@@ -67,14 +67,14 @@
         }
       }
     },
-    "C:\\Users\\eholmes9\\source\\repos\\Copied the teacher\\NhlSolution\\NhlSystemClassLibrary\\NhlSystemClassLibrary.csproj": {
+    "C:\\Users\\eholmes9\\Documents\\GitHub\\cpsc1517-1221-a01-workbook-repository-eHolmesSchool\\Copied the teacher\\NhlSolution\\NhlSystemClassLibrary\\NhlSystemClassLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\eholmes9\\source\\repos\\Copied the teacher\\NhlSolution\\NhlSystemClassLibrary\\NhlSystemClassLibrary.csproj",
+        "projectUniqueName": "C:\\Users\\eholmes9\\Documents\\GitHub\\cpsc1517-1221-a01-workbook-repository-eHolmesSchool\\Copied the teacher\\NhlSolution\\NhlSystemClassLibrary\\NhlSystemClassLibrary.csproj",
         "projectName": "NhlSystemClassLibrary",
-        "projectPath": "C:\\Users\\eholmes9\\source\\repos\\Copied the teacher\\NhlSolution\\NhlSystemClassLibrary\\NhlSystemClassLibrary.csproj",
+        "projectPath": "C:\\Users\\eholmes9\\Documents\\GitHub\\cpsc1517-1221-a01-workbook-repository-eHolmesSchool\\Copied the teacher\\NhlSolution\\NhlSystemClassLibrary\\NhlSystemClassLibrary.csproj",
         "packagesPath": "C:\\Users\\eholmes9\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\eholmes9\\source\\repos\\Copied the teacher\\NhlSolution\\NhlSystemClassLibrary\\obj\\",
+        "outputPath": "C:\\Users\\eholmes9\\Documents\\GitHub\\cpsc1517-1221-a01-workbook-repository-eHolmesSchool\\Copied the teacher\\NhlSolution\\NhlSystemClassLibrary\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
