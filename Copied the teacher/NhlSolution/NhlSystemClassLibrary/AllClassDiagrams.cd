@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="NhlSystemClassLibrary.Player">
+    <Position X="2.25" Y="0.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AUAAIBAAAoAAgAAgAAAAgAQAAACAAAAAAAIAgQAgIAA=</HashCode>
+      <FileName>Player.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NhlSystemClassLibrary.Goalie">
+    <Position X="7.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAIAAAQAAAAAAAAAAAAAAAAAAAAQAgAAAAAAAA=</HashCode>
+      <FileName>Goalie.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
