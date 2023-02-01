@@ -92,6 +92,58 @@ namespace NhlSystemClassLibrary
         // TODO: Define constructor with parameters for:
         // PlayerNo, Name, Positiion, GamesPlayed, Goals, Assists
 
+        public static Player Parse(string csvLine)
+        {
+            const char Delimiter = ',';
+            /*
+             * The Order of the Column value are (as defined in the ToString() methos:
+             * PlayerNo  0
+             * Name   1
+             * Position        2
+             * GamesPlayed       3
+             * Goals         4
+             * Assists        5
+             */
+
+            const int ExpectedColumnCount = 6;
+            string[] tokens = csvLine.ReplaceLineEndings().Split(Delimiter);
+            //Verify length of the array
+            if (tokens.Length != ExpectedColumnCount)
+            {
+                throw new FormatException($"CSV line must contain exactly {ExpectedColumnCount} values");
+            }
+            int playerNo = int.Parse(tokens[0]);
+            string name = tokens[1];
+            Position position = Enum.Parse<Position>(tokens[2]);
+            //Psition position
+            int gamesPlayed = int.Parse(tokens[3]);
+            int goals = int.Parse(tokens[4]);
+            int assists = int.Parse(tokens[5]);
+            return new Player(playerNo, name, position, gamesPlayed, goals, assists);
+        }
+
+        public static bool TryParse(string csvLine, Player currentPlayer)
+        {
+            bool success = false;
+
+            try
+            {
+                currentPlayer = Parse(csvLine);
+                success = true;
+            }
+            catch(FormatException ex)
+            {
+                throw ex;
+            }
+            catch(Exception ex)
+            {
+                throw new Exception($"Player TryParse method failed with exception {ex.Message}");
+            }
+
+            return success;
+        }
+
+
         // TODO: Define methods to
         // 1) add 1 to GamesPlayed
         // 2) add 1 to Goals

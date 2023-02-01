@@ -1,0 +1,7 @@
+﻿97,Connor Mcdavid,C,50,41,51
+18,Zach Hyman,LW,49,26,34
+22,Tyson Barie,D,50,7,27
+56,Kailer Yamamoto,RW,31,4,8
+36,Jack Campbell,G,25,0,0
+1, Wayne Gretzky
+Hello World, 1, 2, 3, 4, 5, 6, 7
