@@ -8,12 +8,13 @@ namespace NhlSystemClassLibrary
 {
     public struct CanadianIncomeTaxData
     {
-        public string RegionAbbreviation { get;  set; }
-        public string RegionName { get;  set; }
-        public int TaxYear { get;  set; }
-        public decimal StartingIncome { get;  set; }
-        public decimal EndingIncome { get;  set; }
-        public double TaxRate { get;  set; }
-        public decimal BaseTaxAmount { get;  set; }
+        public string RegionAbbreviation { get; set; }
+        public string RegionName { get; set; }
+        public int TaxYear { get; set; }
+        public decimal StartingIncome { get; set; }
+        public decimal EndingIncome { get; set; }
+        public double TaxRate { get; set; }
+        public decimal BaseTaxAmount { get; set; }
+
     }
 }

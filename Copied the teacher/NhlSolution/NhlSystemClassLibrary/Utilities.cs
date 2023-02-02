@@ -8,9 +8,9 @@ namespace NhlSystemClassLibrary
 {
     internal static class Utilities
     {
-        public static bool NumInRange(int num, int min, int max)
+        static public bool IsPositiveOrZero(int value)
         {
-            return num >= min && num <= max;
+            return value >= 0;
         }
     }
 }

@@ -1,18 +1,39 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram MajorVersion="1" MinorVersion="1">
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
   <Class Name="NhlSystemClassLibrary.Player">
-    <Position X="2.25" Y="0.5" Width="3" />
+    <Position X="1.5" Y="1.25" Width="3.5" />
     <TypeIdentifier>
-      <HashCode>AUAAIBAAAoAAgAAgAAAAgAQAAACAAAAAAAIAgQAgIAA=</HashCode>
+      <HashCode>AQAgIJAAAoAAgAAkAAAAAAQAAAAAIAAAAAIAgQAgIAI=</HashCode>
       <FileName>Player.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="NhlSystemClassLibrary.Goalie">
-    <Position X="7.25" Y="1" Width="1.5" />
+    <Position X="5.5" Y="1.5" Width="3.5" />
     <TypeIdentifier>
       <HashCode>AAAAIAAIAAAQAAAAAAAAAAAAAAAAAAAAQAgAAAAAAAA=</HashCode>
       <FileName>Goalie.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="NhlSystemClassLibrary.Team">
+    <Position X="6" Y="4.75" Width="5.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAIAAAAAAAAAAMAAAAAQQAABAAAAAAIAgACAACAAA=</HashCode>
+      <FileName>Team.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="NhlSystemClassLibrary.Conference">
+    <Position X="11.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Conference.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="NhlSystemClassLibrary.Division">
+    <Position X="13.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAACAAAAIAAAAAAABAAAAAQAAAAA=</HashCode>
+      <FileName>Division.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

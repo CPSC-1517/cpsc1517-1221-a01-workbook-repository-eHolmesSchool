@@ -3,74 +3,70 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using NhlSystemClassLibrary;
 
 namespace NhlSystemClassLibrary
 {
     public class Player
     {
-        // TODO: Define properties for:
-        const int MinPlayerNum = 1;
-        const int MaxPlayerNum = 98;
+        const int MinPlayerNo = 1;
+        const int MaxPlayerNo = 98;
 
-        private int _playerNum;
-        private string _name;
+        private int _playerNo;
+        private string _playerName;
         private int _gamesPlayed;
         private int _goals;
         private int _assists;
+        // TODO: Define properties for:
         // 1) PlayerNo: int {PlayerNo >= 1 and PlayerNo <= 98}
-        public int PlayerNum
+        public int PlayerNo
         {
-            get
-            {
-                return _playerNum;
-            }
+            get => _playerNo;
             private set
             {
-                if (!Utilities.NumInRange(value, MinPlayerNum, MaxPlayerNum))
+                if (value < MinPlayerNo || value > MaxPlayerNo)
                 {
-                    throw new ArgumentException("Number must be positive");
+                    throw new ArgumentException($"PlayerNo must be between {MinPlayerNo} and {MaxPlayerNo}");
+                    //throw new ArgumentNullException(nameof(PlayerNo),$"PlayerNo must be between {MinPlayerNo} and {MaxPlayerNo}");
                 }
-                _playerNum = value;
+                _playerNo = value;
             }
         }
         // 2) Name: string {cannot be blank}
         public string Name
         {
-            get { return _name; }
+            get => _playerName;
             private set
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {
-                    throw new ArgumentException(nameof(value), "Cannot be blank");
+                    throw new ArgumentException("Name cannot be blank.");
                 }
+                _playerName = value.Trim();
             }
         }
         // 3) Position: Position
         public Position Position { get; private set; }
         // 4) GamesPlayed: int {GamesPlayed >= 0}
         public int GamesPlayed
-           { 
+        {
             get => _gamesPlayed;
-            set
+            protected set
             {
-                if (!Utilities.NumInRange(value, 0, int.MaxValue))
+                if (!Utilities.IsPositiveOrZero(value))
                 {
-                    throw new ArgumentException(nameof(value), "GamesPlayed must be a positive or Zero number");
+                    throw new ArgumentException("GamesPlayed must be a positive or zero number.");
                 }
             }
-        
-        
         }
         // 5) Goals: int {Goals >= 0}
         public int Goals
         {
             get => _goals;
-            set
+            private set
             {
-                if (!Utilities.NumInRange(value, 0, int.MaxValue))
+                if (!Utilities.IsPositiveOrZero(value))
                 {
-                    throw new ArgumentException("Goals must be positive or zero");
+                    throw new ArgumentException("Goals must be a positive or zero number.");
                 }
             }
         }
@@ -78,51 +74,78 @@ namespace NhlSystemClassLibrary
         public int Assists
         {
             get => _assists;
-            set
+            private set
             {
-                if (!Utilities.NumInRange(value, 0, int.MaxValue))
+                if (!Utilities.IsPositiveOrZero(value))
                 {
-                    throw new ArgumentException("Goals must be positive or zero");
+                    throw new ArgumentException("Assists must be a positive or zero number.");
                 }
             }
         }
         // 7) Points : int { Goals + Assists}
-        public int Points => Goals + Assists;
+        //public int Points => Goals + Assists;
+        public int Points
+        {
+            get
+            {
+                return Goals + Assists;
+            }
+        }
 
         // TODO: Define constructor with parameters for:
+        // PlayerNo, Name, Positiion
         // PlayerNo, Name, Positiion, GamesPlayed, Goals, Assists
+        public Player(int playerNo, string name, Position position)
+        {
+            PlayerNo = playerNo;
+            Name = name;
+            Position = position;
+        }
+        public Player(int playerNo, string name, Position position, int gamesPlayed, int goals, int assists)
+        {
+            PlayerNo = playerNo;
+            Name = name;
+            Position = position;
+            GamesPlayed = gamesPlayed;
+            Goals = goals;
+            Assists = assists;
+        }
+
+        public override string ToString()
+        {
+            // Return a CSV list of the properties used by the constructor
+            return $"{PlayerNo},{Name},{Position},{GamesPlayed},{Goals},{Assists}";
+        }
 
         public static Player Parse(string csvLine)
         {
             const char Delimiter = ',';
-            /*
-             * The Order of the Column value are (as defined in the ToString() methos:
-             * PlayerNo  0
-             * Name   1
-             * Position        2
-             * GamesPlayed       3
-             * Goals         4
-             * Assists        5
-             */
-
+            /* The order of the column value are (as defined in ToString() method):
+             * 0) PlayerNo
+             * 1) Name
+             * 2) Position
+             * 3) GamesPlayed
+             * 4) Goals
+             * 5) Assists
+             * */
             const int ExpectedColumnCount = 6;
-            string[] tokens = csvLine.ReplaceLineEndings().Split(Delimiter);
-            //Verify length of the array
+            string[] tokens = csvLine.Split(Delimiter);
+            // Verify that the length of the array 
             if (tokens.Length != ExpectedColumnCount)
             {
-                throw new FormatException($"CSV line must contain exactly {ExpectedColumnCount} values");
-            }
+                throw new FormatException($"CSV line must contain exactly {ExpectedColumnCount} values.");
+;           }
             int playerNo = int.Parse(tokens[0]);
             string name = tokens[1];
             Position position = Enum.Parse<Position>(tokens[2]);
-            //Psition position
+            //Position position = (Position) Enum.Parse(typeof(Position), tokens[2]);
             int gamesPlayed = int.Parse(tokens[3]);
             int goals = int.Parse(tokens[4]);
             int assists = int.Parse(tokens[5]);
             return new Player(playerNo, name, position, gamesPlayed, goals, assists);
         }
 
-        public static bool TryParse(string csvLine, Player currentPlayer)
+        public static bool TryParse(string csvLine, out Player currentPlayer)
         {
             bool success = false;
 
@@ -141,8 +164,8 @@ namespace NhlSystemClassLibrary
             }
 
             return success;
-        }
 
+        }
 
         // TODO: Define methods to
         // 1) add 1 to GamesPlayed
@@ -150,34 +173,17 @@ namespace NhlSystemClassLibrary
         // 3) add 1 to Assists
         public void AddGamesPlayed()
         {
-            GamesPlayed +=1;
+            GamesPlayed += 1;
         }
         public void AddGoals()
         {
-            Goals ++;
+            Goals += 1;
         }
         public void AddAssist()
         {
-            Assists ++;
+            Assists++;
         }
 
-
-
-        public Player(int playerNum, string name, Position position)
-        {
-            PlayerNum = _playerNum;
-            Name = _name;
-            Position = position;
-        }
-
-        public Player(int playerNum, string name, Position position, int gamesPlayed, int goals, int assists)        {
-            PlayerNum = _playerNum;
-            Name = _name;
-            GamesPlayed = _gamesPlayed;
-            Goals = _goals;
-            Assists = _assists;
-            Position = position;
-        }
-
+        
     }
 }

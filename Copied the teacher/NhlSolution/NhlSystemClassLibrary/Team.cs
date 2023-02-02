@@ -82,27 +82,32 @@ namespace NhlSystemClassLibrary
         public Division Division { get; set; }
 
         // TODO: Define auto-implemented property for players: List<Player> with a private set
-        public List<Player> players { get; private set; } = new List<Player>();
+        public List<Player> Players { get; private set; } //= new List<Player>();
 
         // TODO: Add method to add a new Player
         // 1) Validate newPlayer is not null
         // 2) Validate newPlayer PlayerNo is not already on the players list
         // 3) Validate players list is not already full (max 23 players per team)
-        public void AddPlayer(Player currentPlayer)
+        public void AddPlayer(Player newPlayer)
         {
-            if (currentPlayer == null)
+            if (newPlayer == null)
             {
                 throw new ArgumentNullException(nameof(AddPlayer),"Player cannot be null");
-            }
-            foreach(var existingPlayer in players)
+            }           
+            foreach(var existingPlayer in Players)
             {
-                if(currentPlayer.PlayerNum == existingPlayer.PlayerNum)
+                if (newPlayer.PlayerNo == existingPlayer.PlayerNo)
                 {
-                    throw new ArgumentException($"PlayerNo {currentPlayer.PlayerNum} is already used in the team");
+                    throw new ArgumentException($"PlayerNo {newPlayer.PlayerNo} is already in the team");
                 }
             }
-            players.Add(currentPlayer);
+            if (Players.Count == 23)
+            {
+                throw new ArgumentException("Team is full. Cannot add anymore players.");
+            }
+            Players.Add(newPlayer);
         }
+
 
         // Greedy constructor
         public Team(string Name, string city, string arena, Conference conference, Division division)
@@ -112,6 +117,7 @@ namespace NhlSystemClassLibrary
             Arena = arena;
             Conference = conference;
             Division = division;
+            Players = new List<Player>();
         }
 
         public override string ToString()
